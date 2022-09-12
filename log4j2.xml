@@ -1,0 +1,12 @@
+<Configuration status="info">
+    <Appenders>
+        <CustomJmsAppender name="jmsQueue" queueName ="logQueue">
+            <PatternLayout pattern="%maxLen{%d{DEFAULT} [%p] - %m %xEx%n}{500}" />
+        </CustomJmsAppender>
+</Appenders>
+<Loggers>
+    <Logger name="com.fmr.jms" level="info" additivity="false">
+        <AppenderRef ref="jmsQueue" />
+    </Logger>
+</Loggers>
+</Configuration>
